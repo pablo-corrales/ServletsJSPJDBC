@@ -2,7 +2,7 @@ package beans;
 
 import java.io.Serializable;
 
-public class BeanPersona implements Serializable {
+public class PersonaBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int id;
@@ -11,10 +11,10 @@ public class BeanPersona implements Serializable {
 
     private String[] roles;
 
-    public BeanPersona() {
+    public PersonaBean() {
     }
 
-    public BeanPersona(int id, String nombre, String[] caras) {
+    public PersonaBean(int id, String nombre, String[] caras) {
         this.id = id;
         this.nombre = nombre;
         this.roles = caras;
