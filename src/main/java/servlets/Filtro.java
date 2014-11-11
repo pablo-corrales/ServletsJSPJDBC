@@ -12,9 +12,7 @@ import javax.servlet.annotation.WebFilter;
 
 import org.apache.logging.log4j.LogManager;
 
-
-
-@WebFilter({"/HolaMundo", "/Parametros" })
+@WebFilter(urlPatterns = {"/HolaMundo", "/Parametros"})
 public class Filtro implements Filter {
     public void init(FilterConfig fConfig) throws ServletException {
     }
@@ -28,7 +26,7 @@ public class Filtro implements Filter {
 
         chain.doFilter(request, response);
 
-        LogManager.getLogger(Filtro.class).info("Tiempo de proceso("
-                                        + (System.currentTimeMillis() - antes) + " ms)");
+        LogManager.getLogger(Filtro.class).info(
+                "Tiempo de proceso(" + (System.currentTimeMillis() - antes) + " ms)");
     }
 }

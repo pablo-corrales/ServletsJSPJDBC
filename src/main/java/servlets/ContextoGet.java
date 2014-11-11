@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Contexto
  */
-@WebServlet("/Contexto2")
+@WebServlet("/ContextoGet")
 public class ContextoGet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
