@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="ISO-8859-1"  ?>
+<?xml version="1.0" encoding="UTF-8"  ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>JSTL</title>
 </head>
 <body>
-	<h1>Utilización de JSTLs</h1>
+	<h1>UtilizaciÃ³n de Servlets, Beans, JSPs y JSTLs</h1>
 	<h2>Acceso a objetos</h2>
-	<c:set var="p1" value="${requestScope['beanBasic']}" />
-	<c:set var="p2" scope="request" value="${beanBasic}" />
-	<c:set var="p3" scope="session" value="${beanBasic}" />
-	<c:set var="p4" scope="application" value="${beanBasic}" />
+	<c:set var="p1" value="${requestScope['beanPersona']}" />
+	<c:set var="p2" scope="request" value="${beanPersona}" />
+	<c:set var="p3" scope="session" value="${beanPersona}" />
+	<c:set var="p4" scope="application" value="${beanPersona}" />
 
 	<p>Id: ${p1.id}</p>
 	<p>Nombre: ${p1.nombre}</p>
@@ -36,12 +35,12 @@
 			<p>Es mayor que 2</p>
 		</c:otherwise>
 	</c:choose>
-	
+
 	<h2>Colecciones</h2>
-	<p>Caras:</p>
+	<p>Roles:</p>
 	<ul>
-		<c:forEach var="cara" items="${p1.caras}">
-			<li>${cara}</li>
+		<c:forEach var="rol" items="${p1.roles}">
+			<li>${rol}</li>
 		</c:forEach>
 	</ul>
 </body>
