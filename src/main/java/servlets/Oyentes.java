@@ -4,14 +4,13 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRequestEvent;
 import javax.servlet.ServletRequestListener;
-import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@WebListener
+//@WebListener
 public class Oyentes implements HttpSessionListener, ServletContextListener,
         ServletRequestListener {
     private Logger log = LogManager.getLogger(Oyentes.class);

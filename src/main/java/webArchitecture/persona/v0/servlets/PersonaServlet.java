@@ -1,4 +1,4 @@
-package webArchitecture.persona.v0.servlet;
+package webArchitecture.persona.v0.servlets;
 
 import java.io.IOException;
 
