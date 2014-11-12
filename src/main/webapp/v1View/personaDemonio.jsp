@@ -9,7 +9,6 @@
 </head>
 <body>
 	<h1>Demonio!!!</h1>
-	<h2>Acceso a objetos</h2>
     <c:set var="pb" scope="request" value="${personaBean}" />
 	<p>Se te cambia el nombre a: ${pb.nombre}</p>
 	

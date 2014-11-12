@@ -41,12 +41,17 @@ public class FrontController extends HttpServlet {
         if (action.equals("crearPersona")) {
             PersonaBean pb = new PersonaBean();
             request.setAttribute("personaBean", pb);
-            System.out.println("id:"+request.getParameter("id"));
             pb.setId(Integer.valueOf(request.getParameter("id")));
             pb.setNombre(request.getParameter("nombre"));
             view = pb.process();
         } else if (action.equals("crearRol")) {
-            view = "rolForm";
+            RolBean rb = (RolBean) request.getSession(true).getAttribute("rolBean");
+            if (rb == null) {
+                rb = new RolBean();
+                request.getSession(true).setAttribute("rolBean", rb);
+            }
+            rb.setRol(request.getParameter("rol"));
+            view = rb.process();
         }
 
         this.getServletContext().getRequestDispatcher("/v1View/" + view + ".jsp")

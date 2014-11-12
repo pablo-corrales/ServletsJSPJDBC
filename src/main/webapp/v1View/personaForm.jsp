@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,16 +10,11 @@
 <body>
 	<h1>Formulario de Persona</h1>
 	<c:set var="pb" scope="request" value="${personaBean}" />
-	<form action="/ServletsJSPJDBC/v1/crearPersona" method="get">
-		<p>
-			Id: <input id="id" type="text" value="${pb.id}" />
-		</p>
-		<p>
-			Nombre: <input id="nombre" type="text" value="${pb.nombre}" />
-		</p>
-		<p>
-			<input id="sub" type="submit" value="Enviar" />
-		</p>
+	<form action="/ServletsJSPJDBC/v1/crearPersona" method="post">
+		<p>Id: <input name="id" type="text" value="${pb.id}" /></p>
+		<p>Nombre: <input name="nombre" type="text" value="${pb.nombre}" /></p>
+		<p><input type="submit" value="Enviar" /></p>
 	</form>
+    <p><a href="/ServletsJSPJDBC/v1/home">Volver a Home</a></p>
 </body>
 </html>
