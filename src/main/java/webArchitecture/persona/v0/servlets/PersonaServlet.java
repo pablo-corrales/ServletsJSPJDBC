@@ -19,7 +19,7 @@ public class PersonaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         PersonaBean personaBean = new PersonaBean();
-        request.setAttribute("personaBean", personaBean);
+        request.setAttribute("personaBeanV0", personaBean);
 
         String nombre = request.getParameter("nombre");
         if (nombre != null) {

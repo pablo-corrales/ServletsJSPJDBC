@@ -10,9 +10,9 @@
 <body>
     <h1>Desconocido!!!</h1>
     <c:set var="pb" scope="request" value="${personaBean}" />
-    <p>Id: ${pb.id}</p>
-    <p>Nombre: ${pb.nombre}</p>
-    
+    <p>Id: ${pb.persona.id}</p>
+    <p>Nombre: ${pb.persona.nombre}</p>
+    <p>Rol: ${pb.persona.rol}</p>
     <p><a href="/ServletsJSPJDBC/v1/home">Volver a Home</a></p>
 
 </body>

@@ -7,7 +7,7 @@
 <title>Home Persona</title>
 </head>
 <body>
-	<h1>Página principal... V1 de Persona</h1>
+	<h1>Home Persona: V1</h1>
     <p><a href="/ServletsJSPJDBC/v1/crearPersona">Crear persona</a></p>
     <p><a href="/ServletsJSPJDBC/v1/crearRol">Crear rol</a></p>
 </body>

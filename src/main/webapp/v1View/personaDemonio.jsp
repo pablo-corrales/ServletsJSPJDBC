@@ -10,7 +10,7 @@
 <body>
 	<h1>Demonio!!!</h1>
     <c:set var="pb" scope="request" value="${personaBean}" />
-	<p>Se te cambia el nombre a: ${pb.nombre}</p>
+	<p>Se te cambia el nombre a: ${pb.persona.nombre}</p>
 	
     <p><a href="/ServletsJSPJDBC/v1/home">Volver a Home</a></p>
 

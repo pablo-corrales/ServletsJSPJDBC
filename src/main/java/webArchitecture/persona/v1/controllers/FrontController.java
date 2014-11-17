@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import webArchitecture.persona.v1.models.entities.Persona;
+
 @WebServlet("/v1/*")
 // En 3.0 se utilizan anotaciones en lugar de XML
 public class FrontController extends HttpServlet {
@@ -40,9 +42,12 @@ public class FrontController extends HttpServlet {
 
         if (action.equals("crearPersona")) {
             PersonaBean pb = new PersonaBean();
+            Persona p = new Persona();
+            pb.setPersona(p);
             request.setAttribute("personaBean", pb);
-            pb.setId(Integer.valueOf(request.getParameter("id")));
-            pb.setNombre(request.getParameter("nombre"));
+            p.setId(Integer.valueOf(request.getParameter("id")));
+            p.setNombre(request.getParameter("nombre"));
+            p.setRol(request.getParameter("rol"));
             view = pb.process();
         } else if (action.equals("crearRol")) {
             RolBean rb = (RolBean) request.getSession(true).getAttribute("rolBean");

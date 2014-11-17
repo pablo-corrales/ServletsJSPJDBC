@@ -8,9 +8,9 @@
 <title>JSTL</title>
 </head>
 <body>
-	<h1>Utilización de Servlets, Beans, JSPs y JSTLs</h1>
+	<h2>Utilización de Servlets, Beans, JSPs y JSTLs</h2>
 	<h2>Acceso a objetos</h2>
-	<c:set var="pb" value="${requestScope['personaBean']}" />
+	<c:set var="pb" value="${requestScope['personaBeanV0']}" />
 	<!--<c:set var="p2" scope="request" value="${personaBean}" />
 	<c:set var="p3" scope="session" value="${personaBean}" />
 	<c:set var="p4" scope="application" value="${personaBean}" /> -->
