@@ -9,18 +9,18 @@
 </head>
 <body>
 	<h1>Formulario de Persona</h1>
-	<c:set var="pb" scope="request" value="${personaBean}" />
-	<c:set var="rb" scope="session" value="${rolBean}" />
+	<c:set var="cPersona" scope="request" value="${crearPersona}" />
+	<c:set var="cRol" scope="session" value="${crearRol}" />
 	<form action="/ServletsJSPJDBC/v1/crearPersona" method="post">
 		<p>
-			Id: <input name="id" type="text" value="${pb.persona.id}" />
+			Id: <input name="id" type="text" value="${cPersona.persona.id}" />
 		</p>
 		<p>
-			Nombre: <input name="nombre" type="text" value="${pb.persona.nombre}" />
+			Nombre: <input name="nombre" type="text" value="${cPersona.persona.nombre}" />
 		</p>
 		<p>
 			Roles:<select name="rol">
-				<c:forEach var="rol" items="${rb.roles}">
+				<c:forEach var="rol" items="${cRol.roles}">
 					<li>${rol}</li>
 					<option value="${rol}">${rol}</option>
 				</c:forEach>

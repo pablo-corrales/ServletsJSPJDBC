@@ -1,14 +1,14 @@
-package webArchitecture.persona.v1.controllers;
+package webArchitecture.persona.v1.viewsBeans;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RolBean {
+public class CrearRol {
     private List<String> roles;
 
     private String rol;
 
-    public RolBean() {
+    public CrearRol() {
         this.roles = new ArrayList<>();
     }
 
@@ -28,7 +28,7 @@ public class RolBean {
         if (this.rol != null && !this.rol.isEmpty()) {
             this.roles.add(this.rol);
         }
-        return "rolForm";
+        return "crearRol";
     }
 
 }

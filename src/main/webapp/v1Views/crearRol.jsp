@@ -9,11 +9,11 @@
 </head>
 <body>
 	<h1>Formulario de Rol</h1>
-	<c:set var="rb" scope="session" value="${rolBean}" />
+	<c:set var="cRol" scope="session" value="${crearRol}" />
 	<form action="/ServletsJSPJDBC/v1/crearRol" method="post">
 		<p>Rol actuales:</p>
 		<ul>
-			<c:forEach var="rol" items="${rb.roles}">
+			<c:forEach var="rol" items="${cRol.roles}">
 				<li>${rol}</li>
 			</c:forEach>
 		</ul>

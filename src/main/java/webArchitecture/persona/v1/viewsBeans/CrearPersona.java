@@ -1,8 +1,8 @@
-package webArchitecture.persona.v1.controllers;
+package webArchitecture.persona.v1.viewsBeans;
 
 import webArchitecture.persona.v1.models.entities.Persona;
 
-public class PersonaBean {
+public class CrearPersona {
 
     private Persona persona;
 
