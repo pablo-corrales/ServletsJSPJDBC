@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import webArchitecture.persona.v1.models.entities.Persona;
+import webArchitecture.persona.v1.models.entities.Roles;
 import webArchitecture.persona.v1.viewsBeans.CrearPersona;
 import webArchitecture.persona.v1.viewsBeans.CrearRol;
 
@@ -28,14 +29,19 @@ public class Dispatcher extends HttpServlet {
         case "crearPersona":
             CrearPersona crearPersona = new CrearPersona();
             crearPersona.setPersona(new Persona());
+            crearPersona.setRoles((Roles) request.getSession(true).getAttribute("roles"));
+            request.setAttribute(action, crearPersona);
             view = action;
             break;
         case "crearRol":
-            CrearRol crearRol = (CrearRol) request.getSession(true).getAttribute(action);
-            if (crearRol == null) {
-                crearRol = new CrearRol();
-                request.getSession(true).setAttribute(action, crearRol);
+            Roles roles = (Roles) request.getSession(true).getAttribute("roles");
+            if (roles == null) {
+                roles = new Roles();
+                request.getSession(true).setAttribute("roles", roles);
             }
+            CrearRol crearRol= new CrearRol();
+            crearRol.setRoles(roles);
+            request.setAttribute(action, crearRol);
             view = action;
             break;
         default:
@@ -60,13 +66,18 @@ public class Dispatcher extends HttpServlet {
             persona.setRol(request.getParameter("rol"));
             CrearPersona crearPersona = new CrearPersona();
             crearPersona.setPersona(persona);
+            crearPersona.setRoles((Roles) request.getSession().getAttribute("roles"));
             request.setAttribute(action, crearPersona);
             view = crearPersona.process();
             break;
         case "crearRol":
-            CrearRol crearRol = (CrearRol) request.getSession(true).getAttribute(action);
+            CrearRol crearRol = new CrearRol();
+            Roles roles = (Roles) request.getSession().getAttribute("roles");
+            crearRol.setRoles(roles);
             crearRol.setRol(request.getParameter("rol"));
+            request.setAttribute(action, crearRol);
             view = crearRol.process();
+            //request.getSession(true).setAttribute("roles", roles);
             break;
         }
 

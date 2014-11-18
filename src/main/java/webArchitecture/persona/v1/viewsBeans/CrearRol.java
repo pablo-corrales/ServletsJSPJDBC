@@ -1,16 +1,12 @@
 package webArchitecture.persona.v1.viewsBeans;
 
-import java.util.ArrayList;
-import java.util.List;
+import webArchitecture.persona.v1.models.entities.Roles;
 
 public class CrearRol {
-    private List<String> roles;
+    private Roles roles;
 
     private String rol;
 
-    public CrearRol() {
-        this.roles = new ArrayList<>();
-    }
 
     public String getRol() {
         return rol;
@@ -20,7 +16,11 @@ public class CrearRol {
         this.rol = rol;
     }
 
-    public List<String> getRoles() {
+    public void setRoles(Roles roles) {
+        this.roles = roles;
+    }
+
+    public Roles getRoles() {
         return roles;
     }
 

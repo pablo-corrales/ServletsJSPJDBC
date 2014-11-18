@@ -5,10 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Formulario de Persona</title>
+<title>crearPersona</title>
 </head>
 <body>
-	<h1>Formulario de Persona</h1>
+	<h2>Vista de <b>crearPersona</b></h2>
 	<c:set var="cPersona" scope="request" value="${crearPersona}" />
 	<c:set var="cRol" scope="session" value="${crearRol}" />
 	<form action="/ServletsJSPJDBC/v1/crearPersona" method="post">
@@ -20,7 +20,7 @@
 		</p>
 		<p>
 			Roles:<select name="rol">
-				<c:forEach var="rol" items="${cRol.roles}">
+				<c:forEach var="rol" items="${cPersona.roles.valores}">
 					<li>${rol}</li>
 					<option value="${rol}">${rol}</option>
 				</c:forEach>
