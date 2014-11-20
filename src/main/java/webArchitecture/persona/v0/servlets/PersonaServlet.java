@@ -30,10 +30,10 @@ public class PersonaServlet extends HttpServlet {
         if (roles != null) {
             personaBean.setRoles(roles);
         }
-        
+
         personaBean.process();
 
-        this.getServletContext().getRequestDispatcher("/" + "v0/personaJSP.jsp")
+        this.getServletContext().getRequestDispatcher("/personaViewsV0/" + "personaJSP" + ".jsp")
                 .forward(request, response);
     }
 

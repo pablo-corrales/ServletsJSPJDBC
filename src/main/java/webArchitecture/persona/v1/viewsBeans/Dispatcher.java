@@ -15,6 +15,8 @@ import webArchitecture.persona.v1.models.entities.Persona;
 public class Dispatcher extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    private static String PATH_ROOT = "/personaViewsV1/";
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,7 +32,7 @@ public class Dispatcher extends HttpServlet {
             view = action;
             break;
         case "rol":
-            RolView rolView= new RolView();
+            RolView rolView = new RolView();
             request.setAttribute(action, rolView);
             view = action;
             break;
@@ -38,7 +40,7 @@ public class Dispatcher extends HttpServlet {
             view = "home";
         }
 
-        this.getServletContext().getRequestDispatcher("/v1Views/" + view + ".jsp")
+        this.getServletContext().getRequestDispatcher(PATH_ROOT + view + ".jsp")
                 .forward(request, response);
 
     }
@@ -67,7 +69,7 @@ public class Dispatcher extends HttpServlet {
             break;
         }
 
-        this.getServletContext().getRequestDispatcher("/v1Views/" + view + ".jsp")
+        this.getServletContext().getRequestDispatcher(PATH_ROOT + view + ".jsp")
                 .forward(request, response);
     }
 
