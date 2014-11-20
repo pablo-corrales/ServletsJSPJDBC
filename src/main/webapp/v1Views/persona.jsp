@@ -9,18 +9,18 @@
 </head>
 <body>
 	<h2>Vista de <b>crearPersona</b></h2>
-	<c:set var="cPersona" scope="request" value="${crearPersona}" />
-	<c:set var="cRol" scope="session" value="${crearRol}" />
-	<form action="/ServletsJSPJDBC/v1/crearPersona" method="post">
+	<c:set var="pView" scope="request" value="${persona}" />
+	<c:set var="rView" scope="session" value="${rol}" />
+	<form action="/ServletsJSPJDBC/v1/persona" method="post">
 		<p>
-			Id: <input name="id" type="text" value="${cPersona.persona.id}" />
+			Id: <input name="id" type="text" value="${pView.persona.id}" />
 		</p>
 		<p>
-			Nombre: <input name="nombre" type="text" value="${cPersona.persona.nombre}" />
+			Nombre: <input name="nombre" type="text" value="${pView.persona.nombre}" />${pView.msg}
 		</p>
 		<p>
 			Roles:<select name="rol">
-				<c:forEach var="rol" items="${cPersona.roles.valores}">
+				<c:forEach var="rol" items="${pView.roles}">
 					<li>${rol}</li>
 					<option value="${rol}">${rol}</option>
 				</c:forEach>

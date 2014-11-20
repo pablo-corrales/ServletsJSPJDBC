@@ -9,11 +9,11 @@
 </head>
 <body>
 	<h1>Vista de <b>crear Rol</b></h1>
-	<c:set var="cRol" scope="request" value="${crearRol}" />
-	<form action="/ServletsJSPJDBC/v1/crearRol" method="post">
+	<c:set var="rView" scope="request" value="${rol}" />
+	<form action="/ServletsJSPJDBC/v1/rol" method="post">
 		<p>Rol actuales:</p>
 		<ul>
-			<c:forEach var="rol" items="${cRol.roles.valores}">
+			<c:forEach var="rol" items="${rView.roles}">
 				<li>${rol}</li>
 			</c:forEach>
 		</ul>

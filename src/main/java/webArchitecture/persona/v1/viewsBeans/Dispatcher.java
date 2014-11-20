@@ -1,4 +1,4 @@
-package webArchitecture.persona.v1.dispatcher;
+package webArchitecture.persona.v1.viewsBeans;
 
 import java.io.IOException;
 
@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import webArchitecture.persona.v1.models.entities.Persona;
-import webArchitecture.persona.v1.models.entities.Roles;
-import webArchitecture.persona.v1.viewsBeans.CrearPersona;
-import webArchitecture.persona.v1.viewsBeans.CrearRol;
 
 @WebServlet("/v1/*")
 // En 3.0 se utilizan anotaciones en lugar de XML
@@ -26,22 +23,15 @@ public class Dispatcher extends HttpServlet {
 
         String view;
         switch (action) {
-        case "crearPersona":
-            CrearPersona crearPersona = new CrearPersona();
-            crearPersona.setPersona(new Persona());
-            crearPersona.setRoles((Roles) request.getSession(true).getAttribute("roles"));
-            request.setAttribute(action, crearPersona);
+        case "persona":
+            PersonaView personaView = new PersonaView();
+            personaView.setPersona(new Persona());
+            request.setAttribute(action, personaView);
             view = action;
             break;
-        case "crearRol":
-            Roles roles = (Roles) request.getSession(true).getAttribute("roles");
-            if (roles == null) {
-                roles = new Roles();
-                request.getSession(true).setAttribute("roles", roles);
-            }
-            CrearRol crearRol= new CrearRol();
-            crearRol.setRoles(roles);
-            request.setAttribute(action, crearRol);
+        case "rol":
+            RolView rolView= new RolView();
+            request.setAttribute(action, rolView);
             view = action;
             break;
         default:
@@ -59,25 +49,21 @@ public class Dispatcher extends HttpServlet {
         String action = request.getPathInfo().substring(1);
         String view = "home";
         switch (action) {
-        case "crearPersona":
+        case "persona":
             Persona persona = new Persona();
             persona.setId(Integer.valueOf(request.getParameter("id")));
             persona.setNombre(request.getParameter("nombre"));
             persona.setRol(request.getParameter("rol"));
-            CrearPersona crearPersona = new CrearPersona();
-            crearPersona.setPersona(persona);
-            crearPersona.setRoles((Roles) request.getSession().getAttribute("roles"));
-            request.setAttribute(action, crearPersona);
-            view = crearPersona.process();
+            PersonaView personaView = new PersonaView();
+            personaView.setPersona(persona);
+            request.setAttribute(action, personaView);
+            view = personaView.process();
             break;
-        case "crearRol":
-            CrearRol crearRol = new CrearRol();
-            Roles roles = (Roles) request.getSession().getAttribute("roles");
-            crearRol.setRoles(roles);
-            crearRol.setRol(request.getParameter("rol"));
-            request.setAttribute(action, crearRol);
-            view = crearRol.process();
-            //request.getSession(true).setAttribute("roles", roles);
+        case "rol":
+            RolView rolView = new RolView();
+            rolView.setRol(request.getParameter("rol"));
+            request.setAttribute(action, rolView);
+            view = rolView.process();
             break;
         }
 
