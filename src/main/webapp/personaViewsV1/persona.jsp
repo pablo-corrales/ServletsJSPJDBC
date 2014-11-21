@@ -5,10 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>crearPersona</title>
+<title>PersonaView</title>
 </head>
 <body>
-	<h2>Vista de <b>crearPersona</b></h2>
+	<h2>Vista de <b>Persona</b></h2>
 	<c:set var="pView" scope="request" value="${persona}" />
 	<c:set var="rView" scope="session" value="${rol}" />
 	<form action="/ServletsJSPJDBC/v1/persona" method="post">
