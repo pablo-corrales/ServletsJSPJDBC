@@ -27,7 +27,7 @@ public class HolaJDBC {
 
         try {
             sentencia
-                    .executeUpdate("CREATE TABLE tabla1 (id1 INT PRIMARY KEY,nombre CHAR(20) DEFAULT '-')");
+                    .executeUpdate("CREATE TABLE IF NOT EXISTS tabla1 (id1 INT PRIMARY KEY,nombre CHAR(20) DEFAULT '-')");
         } catch (SQLException e) {
             System.out.println("Creación de tabla fallida: " + e.getMessage());
         }
