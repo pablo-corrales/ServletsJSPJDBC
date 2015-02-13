@@ -1,4 +1,4 @@
-package webArchitecture.persona.v0.beans;
+package webArchitecture.persona.v0.views.beans;
 
 import java.io.Serializable;
 

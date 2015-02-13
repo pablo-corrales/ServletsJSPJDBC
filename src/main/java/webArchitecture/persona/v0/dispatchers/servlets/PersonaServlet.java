@@ -1,4 +1,4 @@
-package webArchitecture.persona.v0.servlets;
+package webArchitecture.persona.v0.dispatchers.servlets;
 
 import java.io.IOException;
 
@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import webArchitecture.persona.v0.beans.PersonaBean;
+import webArchitecture.persona.v0.views.beans.PersonaBean;
 
 @WebServlet("/v0/PersonaServlet")
-// En 3.0 se utilizan anotaciones en lugar de XML
 public class PersonaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
